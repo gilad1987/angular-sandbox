@@ -1,6 +1,6 @@
 (function () {
 
-    function Youtube($window)
+    function Youtube($window,YT_events)
     {
 
         var tag = document.createElement('script');
@@ -28,11 +28,10 @@
                         var player;
 
                         $window.onYouTubeIframeAPIReady = function() {
-                            player = new YT.Player(iElement.children()[0], {
+                            player = new YT.Player(iElement[0], {
 
                                 playerVars: {
                                     autoplay: scope.autoplay,
-                                    html5: 1,
                                     theme: "light",
                                     modesbranding: 0,
                                     color: "white",
@@ -40,7 +39,12 @@
                                     showinfo: 1,
                                     controls: 1
                                 },
+                                events: {
+                                    onStateChange: function(event) {
 
+                                        console.log("STATUS CHANGED. New status: " + event.data);
+                                    }
+                                 },
                                 height: scope.height,
                                 width: scope.width,
                                 videoId: scope.videoid
@@ -56,18 +60,18 @@
                             player.cueVideoById(scope.videoid);
                         });
 
-//                        scope.$on(YT_event.STOP,function(){
-//                            player.seekTo(0);
-//                            player.stopVideo();
-//                        });
-//
-//                        scope.$on(YT_event.PLAY,function(){
-//                            player.playVideo();
-//                        });
-//
-//                        scope.$on(YT_event.STOP,function(){
-//                            player.pauseVideo();
-//                        });
+                        scope.$on(YT_events.STOP,function(){
+                            player.seekTo(0);
+                            player.stopVideo();
+                        });
+
+                        scope.$on(YT_events.PLAY,function(){
+                            player.playVideo();
+                        });
+
+                        scope.$on(YT_events.STOP,function(){
+                            player.pauseVideo();
+                        });
 
                     }
                 }
@@ -75,6 +79,6 @@
         }
     }
 
-    angular.module('youtube.directives.module').directive('youtube',['$window',Youtube]);
+    angular.module('youtube.directives.module').directive('youtube',['$window','YT_events',Youtube]);
 
 })();

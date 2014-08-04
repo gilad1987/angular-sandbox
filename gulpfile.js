@@ -52,6 +52,10 @@ var gulp = require('gulp'),
 var scripts = [
     'components/angular/angular.js',
     'components/angular-ui-router/release/angular-ui-router.js',
+
+    'src/js/**/*.services.module.js',
+    'src/js/**/*.directives.module.js',
+    'src/js/**/*.controllers.module.js',
     'src/js/**/*.module.js',
     'src/js/*.module.js',
     'src/js/**/*.srv.js',
