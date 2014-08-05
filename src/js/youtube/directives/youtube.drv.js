@@ -68,7 +68,7 @@
                             player.playVideo();
                         });
 
-                        scope.$on(YT_events.STOP,function(){
+                        scope.$on(YT_events.PAUSE,function(){
                             player.pauseVideo();
                         });
 
