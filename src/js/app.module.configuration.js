@@ -2,7 +2,7 @@
 
     function Config($stateProvider, $urlRouterProvider)
     {
-        console.log('app');
+//        console.log('app');
 
         $urlRouterProvider.otherwise('/');
 

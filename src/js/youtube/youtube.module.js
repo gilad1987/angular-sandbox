@@ -5,9 +5,9 @@
         'youtube.directives.module',
         'youtube.controllers.module'
     ])
-        .config(function(){
-            console.log('youtube');
-        })
+//        .config(function(){
+//            console.log('youtube');
+//        })
 
         .constant('YT_events',{
             'STOP':0,
