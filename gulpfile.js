@@ -56,15 +56,22 @@ var scripts = [
     'src/js/**/*.services.module.js',
     'src/js/**/*.directives.module.js',
     'src/js/**/*.controllers.module.js',
-    'src/js/**/*.module.js',
+
     'src/js/*.module.js',
+    'src/js/**/*.module.js',
+    'src/js/**/*.module.configuration.js',
+
     'src/js/**/*.srv.js',
     'src/js/*.srv.js',
+
     'src/js/**/*.drv.js',
     'src/js/*.drv.js',
+
     'src/js/**/*.ctrl.js',
     'src/js/*.ctrl.js',
+
     'src/js/**/*.js',
+
     'src/js/angular.bootstrap.js'
 ];
 
@@ -243,10 +250,10 @@ gulp.task('watch', function() {
 
 
     // Watch .scss files
-    gulp.watch('src/styles/**/*.css', ['inject_developer']);
+    gulp.watch('src/styles/**/*.css', ['developer']);
 
     // Watch .js files
-    gulp.watch('./src/js/**/*.js', ['inject_developer']);
+    gulp.watch('src/js/**/*.js', ['developer']);
 
     // Watch image files
 //    gulp.watch('src/images/**/*', ['images']);

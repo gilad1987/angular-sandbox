@@ -3,10 +3,10 @@
     function YouTubeController($scope, YT_events){
 
         this.yt = {
-            height:500,
-            width:500,
+            height:100,
+            width:100,
             videoid:'GYLU9leTAjE',
-            autoplay:1
+            autoplay:0
         };
 
         this.sendControlEvent = function(YT_event){

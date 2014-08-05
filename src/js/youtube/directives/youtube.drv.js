@@ -42,7 +42,6 @@
                                 events: {
                                     onStateChange: function(event) {
 
-                                        console.log("STATUS CHANGED. New status: " + event.data);
                                     }
                                  },
                                 height: scope.height,
