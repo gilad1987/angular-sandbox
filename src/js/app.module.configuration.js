@@ -2,6 +2,8 @@
 
     function Config($stateProvider, $urlRouterProvider)
     {
+        console.log('app');
+
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
@@ -16,7 +18,6 @@
                     }
                 }
             })
-
     }
 
     angular.module('app').config(['$stateProvider','$urlRouterProvider',Config]);
