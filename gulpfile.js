@@ -50,8 +50,11 @@ var gulp = require('gulp'),
 
 
 var scripts = [
+    'components/jquery/dist/jquery.js',
+    'components/aterrien/jQuery-Knob/js/jquery.knob.js',
     'components/angular/angular.js',
     'components/angular-ui-router/release/angular-ui-router.js',
+
 
     'src/js/**/*.services.module.js',
     'src/js/**/*.directives.module.js',
